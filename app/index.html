@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Nepofit App — App do Aluno</title>
+<meta name="theme-color" content="#07080A">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#07080A;color:#fff;max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:110px;overflow-x:hidden}
+.anton{font-family:'Anton';letter-spacing:1px}
+/* SPLASH */
+#splash{position:fixed;inset:0;max-width:480px;margin:0 auto;background:radial-gradient(400px 300px at 50% 30%,rgba(200,255,0,.2),transparent),#07080A;z-index:200;display:grid;place-items:center;transition:.6s}
+#splash.off{opacity:0;pointer-events:none}
+#splash .lg{width:92px;height:92px;background:linear-gradient(135deg,#E4FF54,#C8FF00);border-radius:26px;display:grid;place-items:center;font-size:44px;color:#111;transform:skew(-6deg);box-shadow:0 20px 60px rgba(200,255,0,.4);animation:pop 1.2s ease infinite alternate}
+@keyframes pop{to{transform:skew(-6deg) scale(1.07) rotate(-2deg)}}
+/* HEADER */
+.top{padding:20px 18px 10px;display:flex;align-items:center;gap:12px;position:sticky;top:0;background:rgba(7,8,10,.85);backdrop-filter:blur(14px);z-index:50}
+.logo{width:46px;height:46px;background:linear-gradient(135deg,#E4FF54,#C8FF00);border-radius:14px;display:grid;place-items:center;color:#111;font-size:22px;transform:skew(-6deg);box-shadow:0 8px 24px rgba(200,255,0,.35)}
+.pill{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;background:rgba(200,255,0,.08);border:1px solid rgba(200,255,0,.35);color:#C8FF00;border-radius:999px;padding:8px 12px}
+.dot{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;animation:pl 1.6s infinite}
+@keyframes pl{50%{opacity:.35}}
+/* HERO 3D */
+.hero3d{margin:12px 18px;border-radius:22px;min-height:250px;position:relative;overflow:hidden;border:1px solid #242B33;background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop') center/cover;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.hero3d:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.88)),linear-gradient(90deg,rgba(200,255,0,.15),transparent 60%)}
+.float3d{position:absolute;font-size:34px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.6));animation:fl 4s ease-in-out infinite;z-index:2}
+@keyframes fl{50%{transform:translateY(-12px) rotate(8deg)}}
+.hero-tx{position:absolute;bottom:14px;left:14px;right:14px;z-index:3}
+.hero-tx h2{font-size:30px;line-height:.95}
+.hero-tx h2 span{color:#C8FF00}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#E4FF54,#C8FF00);color:#111;font-weight:800;border-radius:14px;padding:15px;text-decoration:none;font-size:14px;margin-top:10px;border:0;width:100%;box-shadow:0 12px 30px rgba(200,255,0,.3)}
+.btn:active{transform:scale(.98)}
+.btn-ghost{background:#141920;color:#fff;border:1px solid #2A323B}
+/* STREAK + RING */
+.duo{margin:12px 18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card3d{background:linear-gradient(180deg,#141A20,#0D1116);border:1px solid #242B33;border-radius:18px;padding:16px;position:relative;overflow:hidden}
+.card3d:before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#C8FF00,transparent)}
+.card3d small{color:#9AA3AD;font-size:11px;font-weight:700;letter-spacing:1px}
+.ring{width:86px;height:86px;margin:8px auto 4px;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:'Anton';font-size:20px;color:#C8FF00}
+/* QUICK */
+.grid{margin:12px 18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q{background:#11161C;border:1px solid #242B33;border-radius:16px;padding:16px;font-size:13px;text-decoration:none;color:#fff;transition:.2s}
+.q:active{transform:scale(.96)}
+.q i{font-size:24px;color:#C8FF00;margin-bottom:8px}
+.q b{display:block}.q small{color:#9AA3AD}
+/* PAGES */
+.page{display:none}.page.on{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}}
+.sec{margin:14px 18px}
+.sec h3{font-family:'Anton';font-size:19px;margin-bottom:10px;letter-spacing:1px}
+.sec h3 span{color:#C8FF00}
+.hrow{display:flex;justify-content:space-between;align-items:center;background:#11161C;border:1px solid #242B33;border-radius:14px;padding:14px;margin-bottom:8px;font-size:13.5px}
+.hrow b:last-child{color:#C8FF00}
+.hrow.now{border-color:#C8FF00;box-shadow:0 0 24px rgba(200,255,0,.15)}
+.carr{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.plan3d{min-width:220px;scroll-snap-align:center;background:linear-gradient(180deg,#151B22,#0C1015);border:1px solid #2A323B;border-radius:18px;padding:20px}
+.plan3d.hot{border:1.5px solid #C8FF00;box-shadow:0 16px 44px rgba(200,255,0,.18)}
+.plan3d .v{font-family:'Anton';font-size:40px;color:#C8FF00}
+.calc{background:#11161C;border:1px solid #242B33;border-radius:18px;padding:18px;display:grid;gap:10px}
+.calc input{background:#0B0E12;border:1px solid #2A323B;border-radius:12px;padding:13px;color:#fff;font-size:15px;width:100%}
+.calc .r{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:#C8FF00;color:#111;font-weight:800;font-size:13px;padding:13px 22px;border-radius:999px;opacity:0;transition:.3s;z-index:120;max-width:90%;text-align:center}
+#toast.on{opacity:1;transform:translateX(-50%)}
+/* TABS */
+.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(12,14,17,.96);backdrop-filter:blur(14px);border-top:1px solid #242B33;display:grid;grid-template-columns:repeat(4,1fr);padding:10px 6px calc(12px + env(safe-area-inset-bottom));z-index:100}
+.tab{background:none;border:0;color:#7C848D;font-size:10px;display:grid;gap:4px;place-items:center;font-weight:800}
+.tab i{font-size:21px}.tab.on{color:#C8FF00}
+.tab .bdg{background:#C8FF00;color:#111;font-size:9px;border-radius:99px;padding:1px 7px;margin-top:2px}
+</style>
+</head>
+<body>
+<div id="splash"><div style="text-align:center"><div class="lg"><i class="fa-solid fa-bolt"></i></div><div class="anton" style="font-size:30px;margin-top:14px">NEPO<span style="color:#C8FF00">FIT</span></div><small style="color:#9AA3AD;letter-spacing:3px;font-size:10px">PERFORMANCE • APP DO ALUNO</small></div></div>
+
+<div class="top">
+<div class="logo"><i class="fa-solid fa-bolt"></i></div>
+<div><b class="anton">NEPOFIT</b><br><small style="color:#C8FF00;font-size:9px;letter-spacing:3px;font-weight:800">PERFORMANCE</small></div>
+<div class="pill"><span class="dot" id="dot"></span><span id="stTx">…</span></div>
+</div>
+
+<div class="page on" id="p-home">
+<div class="hero3d">
+<span class="float3d" style="top:18px;left:20px">🏋️</span>
+<span class="float3d" style="top:40px;right:30px;animation-delay:1s">🔥</span>
+<span class="float3d" style="bottom:110px;right:60px;animation-delay:2s;font-size:26px">⚡</span>
+<div class="hero-tx"><h2 class="anton">SUA MELHOR VERSÃO <span>COMEÇA HOJE</span></h2>
+<a class="btn" href="https://wa.me/5511966304768?text=Quero%20agendar%20minha%20aula%20experimental%20gr%C3%A1tis!" target="_blank"><i class="fa-brands fa-whatsapp"></i> AGENDAR AULA GRÁTIS</a></div>
+</div>
+
+<div class="duo">
+<div class="card3d" style="text-align:center"><small>MINHA SEQUÊNCIA</small>
+<div class="ring"><svg width="86" height="86"><circle cx="43" cy="43" r="36" fill="none" stroke="#242B33" stroke-width="9"/><circle id="ringFg" cx="43" cy="43" r="36" fill="none" stroke="#C8FF00" stroke-width="9" stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="90"/></svg><b>5 dias</b></div>
+<small>🔥 Continue assim!</small></div>
+<div class="card3d"><small>CHECK-IN DE HOJE</small><div style="font-size:15px;font-weight:800;margin:10px 0">Bora treinar? 💪</div><small>Seg–Sex 05h–12h • 14h–22h<br>Sáb 07h–12h</small>
+<button class="btn" id="checkin" style="padding:12px;font-size:13px">CONFIRMAR PRESENÇA</button></div>
+</div>
+
+<div class="grid">
+<a class="q" href="https://wa.me/5511966304768?text=Quero%20minha%20ficha%20de%20treino" target="_blank"><i class="fa-solid fa-dumbbell"></i><b>Meu treino</b><small>Pedir ficha no zap</small></a>
+<a class="q" href="https://maps.app.goo.gl/E5tjHpMiQrKYJvLR9" target="_blank"><i class="fa-solid fa-location-dot"></i><b>Como chegar</b><small>Ribeirão Pires, 202</small></a>
+<a class="q" href="tel:+5511966304768"><i class="fa-solid fa-phone"></i><b>Ligar agora</b><small>(11) 96630-4768</small></a>
+<a class="q" href="../" target="_blank"><i class="fa-solid fa-globe"></i><b>Site oficial</b><small>Ver programas</small></a>
+</div>
+</div>
+
+<div class="page" id="p-treino">
+<div class="sec"><h3>TREINO <span>DE HOJE</span></h3>
+<div class="hrow now"><b>🔥 A — Peito + Tríceps <small style="color:#9AA3AD">+ 20min esteira</small></b><b>HOJE</b></div>
+<div class="hrow"><b>B — Costas + Bíceps</b><b>qua</b></div>
+<div class="hrow"><b>C — Pernas completo</b><b>qui</b></div>
+<div class="hrow"><b>D — Ombro + Funcional</b><b>sex</b></div>
+<a class="btn" href="https://wa.me/5511966304768?text=Quero%20ajuste%20na%20minha%20ficha" target="_blank">PEDIR AJUSTE DE FICHA</a>
+</div>
+<div class="sec"><h3>CALCULADORA <span>IMC</span></h3>
+<div class="calc"><div class="r"><input id="peso" type="number" placeholder="Peso (kg)" inputmode="decimal"><input id="alt" type="number" placeholder="Altura (m) Ex 1.75" inputmode="decimal"></div>
+<button class="btn" id="imcBtn">CALCULAR IMC</button><div id="imcR" style="font-weight:800;color:#C8FF00">Digite peso e altura 👆</div></div>
+</div>
+</div>
+
+<div class="page" id="p-hor">
+<div class="sec"><h3>HORÁRIOS & <span>LOCAL</span></h3>
+<div class="hrow" id="h1"><b>Seg a Sex • manhã</b><b>05:00 – 12:00</b></div>
+<div class="hrow" id="h2"><b>Seg a Sex • tarde/noite</b><b>14:00 – 22:00</b></div>
+<div class="hrow" id="h3"><b>Sábado</b><b>07:00 – 12:00</b></div>
+<div class="hrow"><b>Domingo</b><b>Fechado</b></div>
+<a class="btn" href="https://maps.app.goo.gl/E5tjHpMiQrKYJvLR9" target="_blank"><i class="fa-solid fa-diamond-turn-right"></i> TRAÇAR ROTA NO GPS</a>
+<iframe title="Mapa" src="https://www.google.com/maps?q=R.+Ribeir%C3%A3o+Pires,+202+-+Vila+Conde+Siciliano,+Rio+Grande+da+Serra+-+SP&output=embed" style="width:100%;height:250px;border:0;border-radius:16px;margin-top:10px"></iframe>
+<p style="color:#9AA3AD;font-size:13px;margin-top:8px">R. Ribeirão Pires, 202 — Vila Conde Siciliano<br>Rio Grande da Serra/SP — 09450-000</p>
+</div>
+</div>
+
+<div class="page" id="p-mais">
+<div class="sec"><h3>PLANOS <span>PREMIUM</span></h3>
+<div class="carr">
+<div class="plan3d"><b>MENSAL</b><div class="v">R$99</div><small style="color:#9AA3AD">sem fidelidade</small></div>
+<div class="plan3d hot"><b>TRIMESTRAL ⭐</b><div class="v">R$79</div><small style="color:#9AA3AD">mais escolhido</small></div>
+<div class="plan3d"><b>ANUAL</b><div class="v">R$69</div><small style="color:#9AA3AD">melhor valor</small></div>
+</div>
+<a class="btn" href="https://wa.me/5511966304768?text=Quero%20assinar%20plano%20Nepofit" target="_blank"><i class="fa-brands fa-whatsapp"></i> ASSINAR PELO WHATSAPP</a>
+<a class="btn btn-ghost" href="../" target="_blank"><i class="fa-solid fa-globe"></i> ABRIR SITE COMPLETO</a>
+<button class="btn btn-ghost" id="inst">⬇ INSTALAR APP NO CELULAR</button>
+</div>
+</div>
+
+<div id="toast">Presença confirmada! Bora treinar 💪</div>
+
+<nav class="tabs">
+<button class="tab on" data-p="p-home"><i class="fa-solid fa-house"></i>Início</button>
+<button class="tab" data-p="p-treino"><i class="fa-solid fa-dumbbell"></i>Treino<span class="bdg">HOJE</span></button>
+<button class="tab" data-p="p-hor"><i class="fa-regular fa-clock"></i>Horários</button>
+<button class="tab" data-p="p-mais"><i class="fa-solid fa-tag"></i>Planos</button>
+</nav>
+
+<script>
+setTimeout(()=>document.getElementById('splash').classList.add('off'),1300);
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById(t.dataset.p).classList.add('on');scrollTo(0,0)});
+// Tabs: Início, Treino, Horários, Planos
+(function(){const n=new Date(),d=n.getDay(),h=n.getHours()+n.getMinutes()/60;let o=false,tag='';
+if(d>=1&&d<=5){if(h>=5&&h<12){o=true;tag='h1'}else if(h>=14&&h<22){o=true;tag='h2'}}else if(d===6){if(h>=7&&h<12){o=true;tag='h3'}}
+document.getElementById('stTx').textContent=o?'ABERTO AGORA':'FECHADO';document.getElementById('dot').style.background=o?'#22c55e':'#ef4444';
+if(tag&&document.getElementById(tag))document.getElementById(tag).classList.add('now')})();
+document.getElementById('checkin').onclick=()=>{const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2600)};
+document.getElementById('imcBtn').onclick=()=>{const p=parseFloat(document.getElementById('peso').value.replace(',','.')),a=parseFloat(document.getElementById('alt').value.replace(',','.'));if(!p||!a){document.getElementById('imcR').textContent='Preencha peso e altura 🙂';return}const imc=p/(a*a);let c=imc<18.5?'Abaixo do peso':imc<25?'Peso ideal 👏':imc<30?'Sobrepeso':'Obesidade';document.getElementById('imcR').textContent=`IMC ${imc.toFixed(1)} — ${c}`};
+let dh=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dh=e});
+document.getElementById('inst').onclick=async()=>{if(dh){dh.prompt();await dh.userChoice;dh=null}else alert('Android/Chrome: ⋮ → Adicionar à tela inicial. iPhone: Compartilhar → Tela de Início.')};
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
+

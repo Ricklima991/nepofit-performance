@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academia Nepofit Performance — Treine Pesado | Rio Grande da Serra</title>
+<meta name="description" content="Academia Nepofit Performance — R. Ribeirão Pires, 202, Vila Conde Siciliano, Rio Grande da Serra/SP. Seg–Sex 05h–12h e 14h–22h, Sáb 07h–12h. Aula experimental grátis: (11) 96630-4768.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--lime:#C8FF00;--lime2:#E4FF54;--bg:#07080A;--bg2:#0C0E11;--card:#111419;--line:#20262D;--mut:#9AA3AD;--max:1240px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow-x:hidden}
+h1,h2,.anton{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.94;letter-spacing:.5px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+/* PRELOADER */
+#loader{position:fixed;inset:0;background:#07080A;z-index:200;display:grid;place-items:center;transition:.6s}
+#loader.off{opacity:0;pointer-events:none}
+#loader .l{font-family:'Anton';font-size:42px;letter-spacing:2px}
+#loader .l span{color:var(--lime)}
+#loader .bar{width:180px;height:3px;background:#1c2127;border-radius:99px;margin:14px auto 0;overflow:hidden}
+#loader .bar i{display:block;height:100%;width:40%;background:var(--lime);border-radius:99px;animation:ld 1s infinite alternate}
+@keyframes ld{to{transform:translateX(140px)}}
+/* NAV */
+.nav{position:sticky;top:0;z-index:90;background:rgba(7,8,10,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Anton';font-size:19px;color:#fff;text-decoration:none}
+.logo-mark{width:40px;height:40px;background:linear-gradient(135deg,var(--lime),#8FBE00);color:#111;display:grid;place-items:center;border-radius:11px;transform:skew(-6deg);font-size:20px;box-shadow:0 6px 24px rgba(200,255,0,.35)}
+.logo small{display:block;font-family:'Inter';font-size:9px;letter-spacing:3px;color:var(--lime);font-weight:800}
+.links{display:flex;gap:22px;margin-left:auto;font-size:13px;font-weight:700;color:#C9CFD5}
+.links a{color:inherit;text-decoration:none}.links a:hover{color:var(--lime)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:13px;letter-spacing:.6px;text-transform:uppercase;border-radius:10px;padding:15px 26px;border:0;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn-lime{background:linear-gradient(135deg,var(--lime2),var(--lime));color:#111;box-shadow:0 10px 30px rgba(200,255,0,.25)}
+.btn-lime:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 44px rgba(200,255,0,.4)}
+.btn-line{border:1px solid rgba(200,255,0,.6);color:var(--lime);background:rgba(200,255,0,.06)}
+.btn-line:hover{background:rgba(200,255,0,.14)}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:1px;background:rgba(200,255,0,.08);border:1px solid rgba(200,255,0,.35);color:var(--lime);border-radius:999px;padding:8px 14px}
+.pill .d{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;animation:pl 1.6s infinite}
+@keyframes pl{50%{opacity:.35}}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 480px at 78% 8%,rgba(200,255,0,.14),transparent),radial-gradient(700px 500px at 8% 90%,rgba(200,255,0,.07),transparent),var(--bg)}
+#stars{position:absolute;inset:0;opacity:.7;pointer-events:none}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(700px 500px at 50% 30%,#000,transparent 75%)}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none}
+.orb1{width:420px;height:420px;background:rgba(200,255,0,.22);top:-120px;right:-80px}
+.orb2{width:340px;height:340px;background:rgba(0,180,255,.14);bottom:-120px;left:-100px}
+.hero-grid{position:relative;max-width:var(--max);margin:0 auto;padding:56px 24px 0;display:grid;grid-template-columns:1.02fr .98fr;gap:32px;align-items:center}
+.kicker{font-size:11px;letter-spacing:4px;font-weight:800;color:#E7E7E7}
+.hero h1{font-size:clamp(54px,7vw,96px);margin:14px 0 10px}
+.hero h1 .out{color:transparent;-webkit-text-stroke:2px #fff}
+.hero h1 .lm{color:var(--lime);text-shadow:0 0 40px rgba(200,255,0,.45)}
+.hero p.lead{color:#B9BFC7;max-width:460px;font-size:16px}
+.hero-cta{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 30px}
+.feat{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:12px;color:#C6CCD3;backdrop-filter:blur(6px)}
+.feat b{display:block;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin:6px 0 2px}
+.feat i{color:var(--lime);font-size:20px}
+/* hero visual 3D */
+.hv{position:relative;perspective:1200px;min-height:580px}
+.hv-main{position:absolute;inset:0;border-radius:22px;overflow:hidden;border:1px solid #2A3138;transform-style:preserve-3d;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(200,255,0,.12),0 0 80px rgba(200,255,0,.12);background:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1000&auto=format&fit=crop') center top/cover}
+.hv-main:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.8)),linear-gradient(90deg,rgba(7,8,10,.5),transparent 50%)}
+.hv-ring{position:absolute;inset:-22px;border:1px dashed rgba(200,255,0,.35);border-radius:28px;animation:spin 24s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fcard{position:absolute;background:rgba(13,15,19,.88);backdrop-filter:blur(12px);border:1px solid #2A3138;border-radius:16px;padding:13px 15px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.5);transform:translateZ(60px)}
+.fcard i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--lime2),var(--lime));color:#111;font-size:19px}
+.fcard b{font-size:13.5px}.fcard small{color:var(--mut);font-size:12px}
+.fc1{top:34px;left:-30px;animation:fl 4s ease-in-out infinite}
+.fc2{bottom:120px;right:-18px;animation:fl 5s ease-in-out infinite reverse}
+.fc3{bottom:22px;left:16px;right:16px;justify-content:space-between}
+@keyframes fl{50%{transform:translateY(-10px) translateZ(60px)}}
+.price{background:var(--lime);color:#111;border-radius:10px;padding:8px 14px;font-weight:900}
+/* marquee */
+.mq{background:var(--lime);color:#111;overflow:hidden;white-space:nowrap;padding:12px 0;font-family:'Anton';font-size:19px;letter-spacing:1px;transform:rotate(-1.2deg);margin:26px -12px;border-top:2px solid #111;border-bottom:2px solid #111}
+.mq span{margin:0 16px}
+/* stats */
+.statsbar{padding:0 24px 10px}
+.stats{max-width:var(--max);margin:0 auto;background:rgba(14,16,19,.85);border:1px solid var(--line);border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);backdrop-filter:blur(10px);overflow:hidden}
+.stat{padding:22px;text-align:center;border-left:1px solid var(--line)}.stat:first-child{border:0}
+.stat b{font-family:'Anton';font-size:32px;color:var(--lime)}.stat span{font-size:10.5px;letter-spacing:2px;color:var(--mut);font-weight:800}
+/* sections */
+section{padding:80px 0}
+.eyebrow{color:#9DC400;font-weight:800;font-size:11px;letter-spacing:3px}
+h2.t{font-size:clamp(32px,4.4vw,56px);margin:10px 0 12px}
+.sub{color:var(--mut);max-width:620px;font-size:16px}
+/* programs */
+.programs{background:linear-gradient(180deg,#fff,#F1F3EC);color:#111;border-radius:28px;margin:0 12px}
+.pgrid{display:grid;grid-template-columns:290px 1fr;gap:30px;align-items:start}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pc{background:#fff;border:1px solid #E4E6DE;border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s;transform-style:preserve-3d}
+.pc:hover{box-shadow:0 24px 50px rgba(0,0,0,.16)}
+.pc .im{height:230px;overflow:hidden;position:relative}
+.pc img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pc:hover img{transform:scale(1.12) rotate(.5deg)}
+.pc .im:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.45))}
+.pc .tag3d{position:absolute;top:12px;left:12px;background:var(--lime);font-weight:900;font-size:11px;padding:6px 12px;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.pc .bd{padding:16px}.pc h3{font-size:15px}.pc p{font-size:13px;color:#666;margin:6px 0 10px}
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--bg2)}
+.about-img{background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop') center/cover;min-height:480px;position:relative}
+.about-img:after{content:"DISCIPLINA HOJE\A SUCESSO AMANHÃ";white-space:pre;position:absolute;left:26px;bottom:22px;font-family:'Anton';font-size:40px;line-height:1.05;text-shadow:0 6px 30px rgba(0,0,0,.7)}
+.about-tx{padding:54px 44px}
+.ck{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.ck div{background:rgba(200,255,0,.06);border:1px solid rgba(200,255,0,.25);border-radius:14px;padding:14px;font-size:12px;color:#C6CCD3}
+.ck b{display:block;color:#fff;font-size:11.5px;margin:8px 0 4px;text-transform:uppercase}.ck i{color:var(--lime);font-size:20px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.gal img{height:240px;object-fit:cover;width:100%;border-radius:14px;border:1px solid var(--line);transition:.3s}
+.gal img:hover{transform:scale(1.03) rotate(-.5deg);border-color:var(--lime)}
+/* local */
+.local-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:16px;margin-top:26px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed #2B323A;font-size:15px}
+.row b:last-child{color:var(--lime)}
+.mapa{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:400px}
+.mapa iframe{width:100%;height:100%;min-height:400px;border:0}
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.plan{background:linear-gradient(180deg,#14181D,#0D1014);border:1px solid var(--line);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;position:relative;transition:.3s}
+.plan:hover{transform:translateY(-8px)}
+.plan.hot{border:1.5px solid var(--lime);box-shadow:0 24px 70px rgba(200,255,0,.16)}
+.plan .tg{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--lime);color:#111;font-size:11.5px;font-weight:900;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.plan .v{font-family:'Anton';font-size:54px;color:var(--lime)}
+.plan ul{list-style:none;margin:16px 0 22px;display:grid;gap:10px;font-size:14px;color:#CBD1D8}
+.plan ul i{color:var(--lime);margin-right:8px}
+/* depo */
+.depo{background:#F4F5F0;color:#111;border-radius:28px;margin:0 12px}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.dc{background:#fff;border:1px solid #E5E7DF;border-radius:16px;padding:24px;font-size:14px;color:#444;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.stars{color:#7a9a00;letter-spacing:2px;margin-bottom:10px}
+.who{display:flex;gap:10px;align-items:center;margin-top:14px}
+.av{width:44px;height:44px;border-radius:50%;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:900}
+/* faq */
+.faq{max-width:760px;margin:26px auto 0;display:grid;gap:10px}
+.fi{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.fq{width:100%;background:none;border:0;color:#fff;padding:17px 20px;display:flex;justify-content:space-between;font-weight:700;font-size:15px;cursor:pointer;text-align:left}
+.fa{max-height:0;overflow:hidden;transition:.3s;color:var(--mut);font-size:14.5px}.fa div{padding:0 20px 18px}
+.fi.open .fa{max-height:220px}.fi.open{border-color:rgba(200,255,0,.45)}
+/* final */
+.final{margin:0 12px 30px;background:linear-gradient(120deg,#D8FF00,#9DC400 60%,#5f7a00);color:#111;border-radius:28px;padding:60px 36px;text-align:center;position:relative;overflow:hidden}
+.final:before{content:"NEPOFIT";position:absolute;font-family:'Anton';font-size:170px;opacity:.1;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap}
+.final h2{font-size:clamp(34px,5vw,64px);position:relative}
+.btn-black{background:#111;color:#fff;padding:18px 36px;border-radius:999px;font-weight:800;text-transform:uppercase;display:inline-flex;gap:10px;margin-top:22px;position:relative}
+.btn-black:hover{transform:translateY(-3px)}
+footer{border-top:1px solid var(--line);padding:38px 0;color:var(--mut);font-size:13.5px}
+.foot{max-width:var(--max);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:22px}
+.foot b{color:#fff}.foot a{color:var(--mut);display:block;margin:5px 0;text-decoration:none}.foot a:hover{color:var(--lime)}
+.whats{position:fixed;bottom:20px;right:20px;width:62px;height:62px;background:#25D366;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:30px;z-index:80;box-shadow:0 12px 32px rgba(37,211,102,.5)}
+.whats:after{content:"";position:absolute;inset:-6px;border:2px solid #25D366;border-radius:50%;animation:wp 1.8s infinite}
+@keyframes wp{to{transform:scale(1.25);opacity:0}}
+.reveal{opacity:0;transform:translateY(28px);transition:.7s}.reveal.in{opacity:1;transform:none}
+@media(max-width:980px){.hero-grid,.pgrid,.about-grid,.local-grid,.foot{grid-template-columns:1fr}.cards,.plans,.dgrid,.gal{grid-template-columns:1fr 1fr}.links{display:none}.stats{grid-template-columns:repeat(2,1fr)}.hv{min-height:440px}.fc1{left:6px}.fc2{right:6px}}
+@media(max-width:560px){.cards,.plans,.dgrid,.gal{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="loader"><div><div class="l">NEPO<span>FIT</span></div><div class="bar"><i></i></div></div></div>
+
+<nav class="nav"><div class="nav-in">
+<a class="logo" href="#topo"><span class="logo-mark"><i class="fa-solid fa-bolt"></i></span><span>NEPOFIT<small>PERFORMANCE GYM</small></span></a>
+<div class="links"><a href="#programas">Programas</a><a href="#sobre">Sobre</a><a href="#fotos">Fotos</a><a href="#horarios">Horários</a><a href="#planos">Planos</a><a href="./app/">📱 App</a></div>
+<a class="btn btn-lime" style="padding:12px 20px" href="https://wa.me/5511966304768?text=Quero%20minha%20aula%20experimental%20gr%C3%A1tis!" target="_blank">Aula grátis →</a>
+</div></nav>
+
+<header class="hero" id="topo">
+<canvas id="stars"></canvas><div class="grid-bg"></div><div class="orb orb1"></div><div class="orb orb2"></div>
+<div class="hero-grid">
+<div>
+<span class="pill"><span class="d"></span><span id="openPill">VERIFICANDO HORÁRIO…</span></span>
+<div class="kicker" style="margin-top:14px">CORPO FORTE • MENTE FORTE • VOCÊ MAIS FORTE</div>
+<h1>TREINE <span class="out">PESADO</span><br>MANTENHA O FOCO<br><span class="lm">SEJA FORTE</span></h1>
+<p class="lead">A academia da Vila Conde Siciliano que trata você pelo nome. Musculação completa, cardio, spinning e funcional — com professor presente e preço justo de bairro.</p>
+<div class="hero-cta">
+<a class="btn btn-lime" data-mag href="https://wa.me/5511966304768?text=Quero%20minha%20aula%20experimental%20gr%C3%A1tis%20na%20Nepofit!" target="_blank"><i class="fa-brands fa-whatsapp"></i> Agendar aula grátis</a>
+<a class="btn btn-line" data-mag href="#planos">Ver planos →</a>
+</div>
+<div class="feats">
+<div class="feat"><i class="fa-solid fa-dumbbell"></i><b>40+ aparelhos</b>Pesos livres, racks e cardio completo.</div>
+<div class="feat"><i class="fa-solid fa-user-check"></i><b>Coach presente</b>Avaliação + ficha personalizada.</div>
+<div class="feat"><i class="fa-solid fa-location-dot"></i><b>R. Ribeirão Pires, 202</b>Fácil acesso e rota no GPS.</div>
+</div>
+</div>
+<div class="hv" id="hv">
+<div class="hv-ring"></div>
+<div class="hv-main" id="hvMain"></div>
+<div class="fcard fc1"><i class="fa-solid fa-fire"></i><div><b>-11kg em 90 dias</b><small>resultado real de aluna</small></div></div>
+<div class="fcard fc2"><i class="fa-solid fa-heart-pulse"></i><div><b>Cardio + Spinning</b><small>até 600 kcal por aula</small></div></div>
+<div class="fcard fc3"><div><b>Mensalidade</b><br><small>a partir de</small></div><div class="price">R$ 79,90/mês</div></div>
+</div>
+</div>
+<div class="mq"><span>TREINE PESADO • MANTENHA O FOCO • SEJA FORTE • AULA EXPERIMENTAL GRÁTIS • </span><span>TREINE PESADO • MANTENHA O FOCO • SEJA FORTE • AULA EXPERIMENTAL GRÁTIS • </span></div>
+<div class="statsbar"><div class="stats">
+<div class="stat"><b><span data-count="1200">0</span>+</b><span>ALUNOS ATIVOS</span></div>
+<div class="stat"><b><span data-count="40">0</span>+</b><span>APARELHOS</span></div>
+<div class="stat"><b>6 dias</b><span>POR SEMANA</span></div>
+<div class="stat"><b>4.8★</b><span>NOTA NO GOOGLE</span></div>
+</div></div>
+</header>
+
+<section id="programas"><div class="wrap programs" style="padding:60px 36px">
+<div class="pgrid">
+<div>
+<div class="eyebrow">OUR PROGRAMS</div>
+<h2 class="t">FITNESS PARA CADA OBJETIVO</h2>
+<p style="color:#555;font-size:15px">Hipertrofia, emagrecimento, força ou funcional — sua ficha é montada para o seu corpo e seu momento.</p><br>
+<a class="btn" style="background:#111;color:#fff" href="https://wa.me/5511966304768?text=Quero%20conhecer%20os%20programas!" target="_blank">Explorar programas →</a>
+</div>
+<div class="cards">
+<div class="pc reveal"><div class="im"><span class="tag3d">🔥 HIPERTROFIA</span><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=700&auto=format&fit=crop" alt="Hipertrofia"></div><div class="bd"><h3>MUSCLE BUILDING</h3><p>Massa magra e força com progressão acompanhada.</p></div></div>
+<div class="pc reveal"><div class="im"><span class="tag3d">⚡ SECAR</span><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=700&auto=format&fit=crop" alt="Emagrecimento"></div><div class="bd"><h3>WEIGHT LOSS</h3><p>Cardio + musculação para queimar de verdade.</p></div></div>
+<div class="pc reveal"><div class="im"><span class="tag3d">🏋️ FORÇA</span><img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=700&auto=format&fit=crop" alt="Força"></div><div class="bd"><h3>STRENGTH TRAINING</h3><p>Potência e performance com carga livre.</p></div></div>
+<div class="pc reveal"><div class="im"><span class="tag3d">🤸 GRUPO</span><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=700&auto=format&fit=crop" alt="Funcional"></div><div class="bd"><h3>GROUP CLASSES</h3><p>Funcional energético que motiva todo dia.</p></div></div>
+</div>
+</div>
+</div></section>
+
+<section id="sobre" style="padding-top:26px"><div class="wrap">
+<div class="about-grid reveal">
+<div class="about-img"></div>
+<div class="about-tx">
+<div class="eyebrow">ABOUT US</div>
+<h2 class="t">MUITO MAIS QUE <span style="color:var(--lime)">UMA ACADEMIA</span></h2>
+<p class="sub">Anos na R. Ribeirão Pires, 202 formando gente forte. Ambiente raiz, limpo e respeitoso — do primeiro treino ao agachamento pesado.</p>
+<div class="ck">
+<div><i class="fa-regular fa-heart"></i><b>Healthy Lifestyle</b>Hábitos que mudam sua vida.</div>
+<div><i class="fa-solid fa-clipboard-list"></i><b>Plano personalizado</b>Ficha para seu objetivo.</div>
+<div><i class="fa-solid fa-shield-halved"></i><b>Safe & Clean</b>Seguro para todos.</div>
+</div>
+<div style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">
+<a class="btn btn-lime" href="https://wa.me/5511966304768?text=Quero%20conhecer%20a%20Nepofit!" target="_blank">Conhecer a academia</a>
+<a class="btn btn-line" href="https://maps.app.goo.gl/E5tjHpMiQrKYJvLR9" target="_blank">Como chegar</a>
+</div>
+</div>
+</div>
+<div class="gal" id="fotos">
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=700&auto=format&fit=crop" alt="Salão">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=700&auto=format&fit=crop" alt="Treino">
+<img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=700&auto=format&fit=crop" alt="Halteres">
+<img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=700&auto=format&fit=crop" alt="Bike">
+</div>
+<p style="color:var(--mut);font-size:13px;margin-top:10px">📸 Fotos ilustrativas premium — substitua pelos registros reais da unidade para conversão máxima.</p>
+</div></section>
+
+<section id="horarios" style="padding-top:0"><div class="wrap">
+<div class="eyebrow">HORÁRIOS & LOCAL</div>
+<h2 class="t">PERTO DE VOCÊ, NO SEU HORÁRIO</h2>
+<div class="local-grid">
+<div class="box">
+<h3 class="anton" style="font-size:20px">🕐 HORÁRIOS</h3>
+<div class="row"><b>Seg a Sex • manhã</b><b>05:00 — 12:00</b></div>
+<div class="row"><b>Seg a Sex • tarde/noite</b><b>14:00 — 22:00</b></div>
+<div class="row"><b>Sábado</b><b>07:00 — 12:00</b></div>
+<div class="row"><b>Domingo</b><b>Encerrado</b></div>
+<p style="margin-top:14px;font-size:14px;color:#CBD1D8">📍 <b>R. Ribeirão Pires, 202 — Vila Conde Siciliano, Rio Grande da Serra/SP — 09450-000</b><br>📞 <a href="https://wa.me/5511966304768" style="color:#fff;font-weight:800">(11) 96630-4768</a></p>
+<div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+<a class="btn btn-lime" href="https://maps.app.goo.gl/E5tjHpMiQrKYJvLR9" target="_blank">Traçar rota</a>
+<a class="btn btn-line" href="https://wa.me/5511966304768" target="_blank">WhatsApp</a>
+</div>
+</div>
+<div class="mapa"><iframe title="Mapa" src="https://www.google.com/maps?q=R.+Ribeir%C3%A3o+Pires,+202+-+Vila+Conde+Siciliano,+Rio+Grande+da+Serra+-+SP&output=embed" loading="lazy"></iframe></div>
+</div>
+</div></section>
+
+<section id="planos" style="padding-top:0"><div class="wrap">
+<div class="eyebrow">PLANOS</div>
+<h2 class="t">ESCOLHA SEU RITMO</h2>
+<div class="plans">
+<div class="plan reveal"><h3 class="anton">MENSAL FLEX</h3><div class="v">R$ 99<small style="font-size:14px">,90/mês</small></div><ul><li><i class="fa-solid fa-check"></i>Musculação + cardio livre</li><li><i class="fa-solid fa-check"></i>1 avaliação física</li><li><i class="fa-solid fa-check"></i>Ficha de treino</li><li><i class="fa-solid fa-check"></i>Sem fidelidade</li></ul><a class="btn btn-line" style="margin-top:auto" href="https://wa.me/5511966304768?text=Quero%20o%20plano%20MENSAL" target="_blank">Assinar mensal</a></div>
+<div class="plan hot reveal"><div class="tg">⭐ MAIS ESCOLHIDO</div><h3 class="anton">TRIMESTRAL</h3><div class="v">R$ 79<small style="font-size:14px">,90/mês</small></div><ul><li><i class="fa-solid fa-check"></i>Tudo do mensal + spinning</li><li><i class="fa-solid fa-check"></i>Reajuste de treino</li><li><i class="fa-solid fa-check"></i>Suporte no WhatsApp</li><li><i class="fa-solid fa-check"></i>Camiseta Nepofit</li></ul><a class="btn btn-lime" style="margin-top:auto" href="https://wa.me/5511966304768?text=Quero%20o%20plano%20TRIMESTRAL" target="_blank">Quero evoluir</a></div>
+<div class="plan reveal"><h3 class="anton">ANUAL</h3><div class="v">R$ 69<small style="font-size:14px">,90/mês</small></div><ul><li><i class="fa-solid fa-check"></i>Acesso total ilimitado</li><li><i class="fa-solid fa-check"></i>Treino personalizado</li><li><i class="fa-solid fa-check"></i>Congela 30 dias/ano</li><li><i class="fa-solid fa-check"></i>2 meses de desconto</li></ul><a class="btn btn-line" style="margin-top:auto" href="https://wa.me/5511966304768?text=Quero%20o%20plano%20ANUAL" target="_blank">Fechar anual</a></div>
+</div>
+</div></section>
+
+<section class="depo" style="padding:60px 0"><div class="wrap">
+<div class="eyebrow">DEPOIMENTOS</div>
+<h2 class="t">WHAT OUR <span style="color:#6a8a00">MEMBERS</span> SAY</h2>
+<div class="dgrid">
+<div class="dc"><div class="stars">★★★★★</div>“Melhor academia do bairro. Professor corrige de verdade. Saí de 92kg pra 81kg.”<div class="who"><div class="av">R</div><div><b>Rafael M.</b><br><small>Aluno há 2 anos</small></div></div></div>
+<div class="dc"><div class="stars">★★★★★</div>“Tinha vergonha de academia grande. Aqui me senti em casa desde o dia 1.”<div class="who"><div class="av">C</div><div><b>Cris S.</b><br><small>Aluna há 1 ano</small></div></div></div>
+<div class="dc"><div class="stars">★★★★★</div>“Aparelhos cuidados, dá pra treinar pesado de verdade. Recomendo.”<div class="who"><div class="av">D</div><div><b>Diego F.</b><br><small>Aluno há 3 anos</small></div></div></div>
+</div>
+<div class="faq" id="faq">
+<div class="fi"><button class="fq">Preciso saber treinar? <i class="fa-solid fa-chevron-down"></i></button><div class="fa"><div>Não. 70% começam do zero: avaliação + ficha iniciante + acompanhamento na 1ª semana.</div></div></div>
+<div class="fi"><button class="fq">Aula experimental é grátis? <i class="fa-solid fa-chevron-down"></i></button><div class="fa"><div>Sim! Chame no WhatsApp (11) 96630-4768 e agende.</div></div></div>
+<div class="fi"><button class="fq">Fecha no almoço? <i class="fa-solid fa-chevron-down"></i></button><div class="fa"><div>Sim: pausa 12h–14h de seg a sex. Sábado 07h–12h, domingo fechado.</div></div></div>
+</div>
+</div></section>
+
+<div class="wrap"><div class="final">
+<h2>SUA PRIMEIRA AULA É GRÁTIS.<br>SEU RESULTADO É GARANTIDO.</h2>
+<p style="font-weight:600;opacity:.75;max-width:560px;margin:10px auto 0">Vagas limitadas por horário para manter a qualidade. Garanta a sua hoje.</p>
+<a class="btn-black" href="https://wa.me/5511966304768?text=Quero%20minha%20SEMANA%20GR%C3%81TIS!" target="_blank"><i class="fa-brands fa-whatsapp" style="font-size:22px"></i> Quero minha semana grátis</a>
+</div></div>
+
+<footer><div class="foot">
+<div><b class="anton" style="font-size:18px">NEPOFIT PERFORMANCE</b>Ginásio de fitness • Musculação • Cardio<br>R. Ribeirão Pires, 202 — Rio Grande da Serra/SP</div>
+<div><b>LINKS</b><a href="#programas">Programas</a><a href="#planos">Planos</a><a href="#horarios">Horários</a><a href="./app/">📱 App do aluno</a></div>
+<div><b>PROGRAMAS</b><a href="#programas">Hipertrofia</a><a href="#programas">Emagrecimento</a><a href="#programas">Força</a><a href="#programas">Funcional</a></div>
+<div><b>CONTATO</b><a href="https://wa.me/5511966304768">(11) 96630-4768</a><a href="https://maps.app.goo.gl/E5tjHpMiQrKYJvLR9" target="_blank">➤ Abrir no Google Maps</a>Seg–Sex 05h–12h e 14h–22h • Sáb 07h–12h</div>
+</div></footer>
+<a class="whats" href="https://wa.me/5511966304768?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('off'),500));
+// Partículas hero
+const cv=document.getElementById('stars'),cx=cv.getContext('2d');let P=[];
+function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;P=Array.from({length:70},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.8+.4,s:Math.random()*.5+.15,o:Math.random()*.6+.2}))}
+rs();addEventListener('resize',rs);
+(function an(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(p=>{p.y-=p.s;if(p.y<0)p.y=cv.height;cx.globalAlpha=p.o;cx.fillStyle=p.x%7<1?'#C8FF00':'#fff';cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill()});requestAnimationFrame(an)})();
+// Status aberto/fechado
+(function(){const n=new Date(),d=n.getDay(),h=n.getHours()+n.getMinutes()/60;let o=(d>=1&&d<=5)?((h>=5&&h<12)||(h>=14&&h<22)):(d===6?(h>=7&&h<12):false);document.getElementById('openPill').textContent=o?'ABERTO AGORA • VEM TREINAR':'FECHADO NO MOMENTO • CHAME NO WHATSAPP';})();
+// Reveal + contadores
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const el=e.target,end=+el.dataset.count;let c=0;const t=setInterval(()=>{c+=Math.ceil(end/40);if(c>=end){c=end;clearInterval(t)}el.textContent=c.toLocaleString('pt-BR')},40)}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+// Tilt 3D hero + cards
+function tilt(sel,mx){document.querySelectorAll(sel).forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(900px) rotateY(${x*mx}deg) rotateX(${-y*mx}deg) translateY(-4px)`});el.addEventListener('mouseleave',()=>el.style.transform='')})}
+tilt('.pc',10);
+const hv=document.getElementById('hv'),hm=document.getElementById('hvMain');
+if(matchMedia('(pointer:fine)').matches){document.querySelector('.hero').addEventListener('mousemove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;hm.style.transform=`rotateY(${x*10}deg) rotateX(${-y*8}deg)`;document.querySelectorAll('.fcard').forEach((f,i)=>f.style.translate=`${x*(14+i*6)}px ${y*(10+i*6)}px`)})}
+// Botões magnéticos
+document.querySelectorAll('[data-mag]').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.18}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
+// FAQ
+document.querySelectorAll('.fq').forEach(b=>b.onclick=()=>{const i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')});
+</script>
+</body>
+</html>
+
